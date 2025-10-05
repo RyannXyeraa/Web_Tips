@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tips Web | RyannTO</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      background: linear-gradient(135deg, #ff9966, #ff5e62);
+      color: white;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      padding: 30px 20px;
+    }
+
+    header h1 {
+      font-size: 2.4rem;
+      margin-bottom: 10px;
+    }
+
+    header p {
+      font-size: 1rem;
+      opacity: 0.9;
+      margin-bottom: 25px;
+    }
+
+    main {
+      background: rgba(0, 0, 0, 0.3);
+      padding: 25px;
+      border-radius: 15px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.4);
+      max-width: 800px;
+      width: 100%;
+    }
+
+    h2 {
+      margin-bottom: 15px;
+    }
+
+    .materi-list {
+      list-style: none;
+      padding: 0;
+    }
+
+    .materi-list button {
+      width: 100%;
+      background: #2d98da;
+      color: white;
+      border: none;
+      padding: 12px;
+      border-radius: 10px;
+      margin: 8px 0;
+      font-size: 1rem;
+      cursor: pointer;
+      font-weight: bold;
+      transition: 0.3s;
+      box-shadow: 0 0 8px rgba(0,0,0,0.4);
+    }
+
+    .materi-list button:hover {
+      background: #45aaf2;
+      transform: scale(1.05);
+    }
+
+    #konten {
+      margin-top: 20px;
+      background: rgba(0,0,0,0.4);
+      padding: 15px;
+      border-radius: 10px;
+      text-align: left;
+      line-height: 1.6;
+    }
+
+    footer {
+      margin-top: 40px;
+      opacity: 0.8;
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>🌐 Tips Web Dev</h1>
+    <p>Belajar bikin website dari HP aja bisa, asal niat dan sabar! 💻</p>
+  </header>
+
+  <main>
+    <h2>Pilih Materi:</h2>
+    <ul class="materi-list">
+      <li><button onclick="tampilkan('html')">🧱 Dasar HTML</button></li>
+      <li><button onclick="tampilkan('css')">🎨 Dasar CSS</button></li>
+      <li><button onclick="tampilkan('js')">⚡ Dasar JavaScript</button></li>
+      <li><button onclick="tampilkan('github')">🚀 Upload ke GitHub Pages</button></li>
+      <li><button onclick="tampilkan('apk')">📱 Ubah ke APK</button></li>
+      <li><button onclick="tampilkan('ai')">🤖 Tambah AI ke Web</button></li>
+    </ul>
+
+    <div id="konten">
+      <p>Klik salah satu topik buat mulai belajar coding web!</p>
+    </div>
+  </main>
+
+  <footer>
+    © 2025 RyannTO | Web Learning Series
+  </footer>
+
+  <script>
+    function tampilkan(materi) {
+      const konten = document.getElementById('konten');
+      const isi = {
+        html: `
+          <h3>🧱 Dasar HTML</h3>
+          <p>HTML adalah pondasi utama dari website. Gunakan <code>&lt;div&gt;</code>, <code>&lt;p&gt;</code>, dan <code>&lt;img&gt;</code> untuk struktur kontenmu. Semua file web wajib punya <code>index.html</code>.</p>
+        `,
+        css: `
+          <h3>🎨 Dasar CSS</h3>
+          <p>CSS mengatur tampilan. Gunakan <code>background</code>, <code>color</code>, dan <code>font-size</code> buat bikin tampilan menarik. Warna gradient bisa bikin webmu hidup!</p>
+        `,
+        js: `
+          <h3>⚡ Dasar JavaScript</h3>
+          <p>JavaScript bikin web jadi interaktif. Contoh: tombol yang bisa ubah teks atau buka halaman lain. Gunakan <code>onclick</code> buat jalankan fungsi JS.</p>
+        `,
+        github: `
+          <h3>🚀 Upload ke GitHub Pages</h3>
+          <p>1. Buat repo di GitHub.<br>
+          2. Upload semua file web (HTML, CSS, JS).<br>
+          3. Buka Settings → Pages → pilih “Deploy from branch”.<br>
+          4. Tunggu sebentar, dan webmu langsung online!</p>
+        `,
+        apk: `
+          <h3>📱 Ubah Web ke APK</h3>
+          <p>Kamu bisa ubah web jadi aplikasi Android pakai Termux + Cordova. Tapi kalau mau cara paling gampang, pakai webview generator seperti “WebToApk” dari browser HP.</p>
+        `,
+        ai: `
+          <h3>🤖 Tambah AI ke Web</h3>
+          <p>AI bisa ditambah lewat API seperti OpenAI. Kamu bisa buat chatbot, image generator, atau asisten interaktif di websitemu!</p>
+        `
+      };
+      konten.innerHTML = isi[materi] || `<p>Pilih topik dulu ya 😄</p>`;
+    }
+  </script>
+
+</body>
+</html>
